@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { launchGame, getUserName, getRandomNum } from '../src/index.js';
+import {
+  launchGame, getUserName, getRandomNum, askQuestion,
+} from '../src/index.js';
 
 const isPrime = (num) => {
   const sqrtnum = Math.floor(Math.sqrt(num));
@@ -16,8 +17,7 @@ const isPrime = (num) => {
 
 const askQuestionPrime = () => {
   const newNumber = getRandomNum();
-  console.log(`Question: ${newNumber}`);
-  const userAnswer = readlineSync.question('Your answer: ');
+  const userAnswer = askQuestion(newNumber);
   return [userAnswer, isPrime(newNumber)];
 };
 

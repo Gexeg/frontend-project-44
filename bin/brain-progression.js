@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { launchGame, getUserName } from '../src/index.js';
+import { launchGame, getUserName, askQuestion } from '../src/index.js';
 
 const maxStep = 10;
 const seqLength = 10;
@@ -16,9 +15,7 @@ const askQuestionSequence = () => {
   const rightAnswer = progression[numIndex];
   progression[numIndex] = stub;
 
-  console.log(`Question: ${progression}`);
-
-  const userAnswer = Number(readlineSync.question('Your answer: '));
+  const userAnswer = askQuestion(progression);
   return [userAnswer, rightAnswer];
 };
 

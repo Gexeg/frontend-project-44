@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { launchGame, getUserName, getRandomNum } from '../src/index.js';
+import {
+  launchGame, getUserName, getRandomNum, askQuestion,
+} from '../src/index.js';
 
 const operations = [
   {
@@ -10,10 +11,6 @@ const operations = [
   {
     sign: '-',
     f: (a, b) => a - b,
-  },
-  {
-    sign: '/',
-    f: (a, b) => a / b,
   },
   {
     sign: '*',
@@ -26,10 +23,7 @@ const askQuestionCalculations = () => {
   const a = getRandomNum();
   const b = getRandomNum();
   const operation = getRandomOperation();
-
-  console.log(`Question: ${a} ${operation.sign} ${b}`);
-
-  const userAnswer = Number(readlineSync.question('Your answer: '));
+  const userAnswer = askQuestion(`${a} ${operation.sign} ${b}`);
   const rightAnswer = operation.f(a, b);
   return [userAnswer, rightAnswer];
 };

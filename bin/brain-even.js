@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { launchGame, getUserName, getRandomNum } from '../src/index.js';
+import {
+  launchGame, getUserName, getRandomNum, askQuestion,
+} from '../src/index.js';
 
 const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
 
 const askQuestionIsEven = () => {
   const newNumber = getRandomNum();
-  console.log(`Question: ${newNumber}`);
-  const userAnswer = readlineSync.question('Your answer: ');
+  const userAnswer = askQuestion(getRandomNum());
   return [userAnswer, isEven(newNumber)];
 };
 
