@@ -14,7 +14,7 @@ const isPrime = (num) => {
   return prime;
 };
 
-const askQuestionSequence = () => {
+const askQuestionPrime = () => {
   const newNumber = getRandomNum();
   console.log(`Question: ${newNumber}`);
   const userAnswer = readlineSync.question('Your answer: ');
@@ -23,4 +23,4 @@ const askQuestionSequence = () => {
 
 const userName = getUserName();
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-launchGame(userName, askQuestionSequence);
+launchGame(userName, askQuestionPrime);
