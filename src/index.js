@@ -26,5 +26,6 @@ export const launchGame = (userName, askQuestion) => {
       return
     }
   }
+  
   console.log(`Congratulations, ${userName}!`);
 };
