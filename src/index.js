@@ -23,8 +23,8 @@ export const launchGame = (userName, askQuestion) => {
       console.log(
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\n Let's try again, ${userName}!`,
       );
-      rightAnswersCounter = 0;
+      return
     }
   }
-  console.log(`Congratulations, ${userName}`);
+  console.log(`Congratulations, ${userName}!`);
 };
