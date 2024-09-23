@@ -23,7 +23,7 @@ const askQuestionCalculations = () => {
   const a = getRandomNum();
   const b = getRandomNum();
   const operation = getRandomOperation();
-  const userAnswer = askQuestion(`${a} ${operation.sign} ${b}`);
+  const userAnswer = Number(askQuestion(`${a} ${operation.sign} ${b}`));
   const rightAnswer = operation.f(a, b);
   return [userAnswer, rightAnswer];
 };
