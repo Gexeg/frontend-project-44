@@ -14,7 +14,7 @@ const getGcd = (a, b) => {
 const askQuestionGcd = () => {
   const a = getRandomNum();
   const b = getRandomNum();
-  const userAnswer = askQuestion(`${a} ${b}`);
+  const userAnswer = Number(askQuestion(`${a} ${b}`));
   const rightAnswer = getGcd(a, b);
   return [userAnswer, rightAnswer];
 };
