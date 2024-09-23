@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 
+export const getRandomNum = () => (Math.floor(Math.random() * 101) + 1);
 const correctAnswersRequired = 3;
 
 export const getUserName = () => {
@@ -19,7 +20,6 @@ export const launchGame = (userName, askQuestion) => {
       rightAnswersCounter += 1;
       console.log('Correct!');
     } else {
-      console.log(rightAnswersCounter);
       console.log(
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\n Let's try again, ${userName}!`,
       );

@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { launchGame, getUserName } from '../src/index.js';
+import { launchGame, getUserName, getRandomNum } from '../src/index.js';
 
-const getRandomNum = () => (Math.floor(Math.random() * 101) + 1);
 const getGcd = (a, b) => {
   if (!b) {
     return a;

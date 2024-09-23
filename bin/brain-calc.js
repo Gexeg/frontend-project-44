@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { launchGame, getUserName } from '../src/index.js';
+import { launchGame, getUserName, getRandomNum } from '../src/index.js';
 
 const operations = [
   {
@@ -21,8 +21,6 @@ const operations = [
   },
 ];
 const getRandomOperation = () => operations[Math.floor(Math.random() * operations.length)];
-
-const getRandomNum = () => (Math.floor(Math.random() * 101) + 1);
 
 const askQuestionCalculations = () => {
   const a = getRandomNum();
