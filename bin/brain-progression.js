@@ -24,7 +24,7 @@ const askQuestionSequence = () => {
   const rightAnswer = progression[numIndex];
   progression[numIndex] = stub;
 
-  const userAnswer = Number(askQuestion(progression));
+  const userAnswer = Number(askQuestion(progression.join(' ')));
   return [userAnswer, rightAnswer];
 };
 
